@@ -1,0 +1,16 @@
+@use "../../assets/sass/variables"as *;
+
+.nav {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   padding: 1rem;
+   border-bottom: 1rem solid $primaryColor;
+
+   &-menu__icon {
+      width: 4rem;
+      height: auto;
+
+   }
+}

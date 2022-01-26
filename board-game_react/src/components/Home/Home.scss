@@ -1,0 +1,32 @@
+@use "../../assets/sass/variables"as *;
+
+.home {
+   &__textbox {
+      height: 70vh;
+      color: $textBackground;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+   }
+
+   &__title {
+      text-align: center;
+      margin: 0 5vw 0;
+   }
+
+   &__description {
+      margin: 0 8vw;
+   }
+
+   &__background {
+      height: 75vh;
+      width: auto;
+      background-size: cover;
+      background-position-x: center;
+      background-image: linear-gradient($pictureCover, $pictureCover),
+         url("../../assets/images/boardgames.jpg"
+         );
+   }
+}
