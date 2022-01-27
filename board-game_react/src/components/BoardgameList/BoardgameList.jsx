@@ -6,15 +6,14 @@ const BoardgameList = (props) => {
    const { deleteBoardgame } = props;
 
    return (
-      <>
-         <h2 className="heading">Explore our list of Board Games</h2>
-         <div className="container">
+      <div className="game-list">
+         <h2 className="game-list__heading">Explore our list of Board Games</h2>
+         <div className="game-list__container">
             {props.boardgames && props.boardgames.map(boardgame => (<div>
-               <Boardgame key={boardgame.id} boardgames={boardgame} />
-               <button onClick={() => deleteBoardgame(boardgame.id)}>Delete</button>
+               <Boardgame key={boardgame.id} boardgames={boardgame} deleteBoardgame={deleteBoardgame} />
             </div>))}
          </div>
-      </>
+      </div>
    )
 }
 

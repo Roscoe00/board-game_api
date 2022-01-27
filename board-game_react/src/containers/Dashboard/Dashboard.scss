@@ -1,0 +1,10 @@
+@use "../../assets/sass/variables"as *;
+
+.dashboard {
+   background-position: center;
+   background-size: cover;
+   background-image: linear-gradient($pictureCover, $pictureCover), url("../../assets/images/background.jpg"
+      );
+   background-attachment: fixed;
+   height: 90vh;
+}

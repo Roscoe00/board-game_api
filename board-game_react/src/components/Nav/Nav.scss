@@ -6,7 +6,11 @@
    align-items: center;
    justify-content: space-between;
    padding: 1rem;
-   border-bottom: 1rem solid $primaryColor;
+   border-bottom: 1rem solid $secondaryColor;
+   position: sticky;
+   top: 0;
+   background-color: $primaryColor;
+   height: 10vh;
 
    &-menu__icon {
       width: 4rem;

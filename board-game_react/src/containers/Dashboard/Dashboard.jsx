@@ -33,11 +33,13 @@ const Dashboard = () => {
    return (
       <Router>
          <Nav />
-         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/boardgames" element={<BoardgameList boardgames={boardgames} deleteBoardgame={deleteBoardgame} />} />
-            <Route path="/new-Boardgame" element={<Form />} />
-         </Routes>
+         <div className="dashboard">
+            <Routes>
+               <Route path="/" element={<Home />} />
+               <Route path="/boardgames" element={<BoardgameList boardgames={boardgames} deleteBoardgame={deleteBoardgame} />} />
+               <Route path="/new-Boardgame" element={<Form />} />
+            </Routes>
+         </div>
       </Router>
    )
 }

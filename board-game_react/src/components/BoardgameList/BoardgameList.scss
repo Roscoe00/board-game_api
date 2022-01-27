@@ -1,0 +1,18 @@
+@use "../../assets/sass/variables"as *;
+
+.game-list {
+   background-color: $defaultBackground;
+   padding-bottom: 2rem;
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+   }
+
+   &__heading {
+      text-align: center;
+      padding: 1rem 0rem;
+      margin: auto;
+   }
+}

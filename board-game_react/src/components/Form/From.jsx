@@ -28,7 +28,7 @@ const Form = () => {
 
    return (
       <div className="log-form">
-         <h2 className="log-form__title">Add a new Board game</h2>
+         <h2 className="log-form__title">Add a new Board game to the list</h2>
          <form className="log-form__form" onSubmit={handleSubmit}>
             <div className="log-form__section">
                <label className="log-form__label" htmlFor="gamename">Name of Game</label>
@@ -42,7 +42,7 @@ const Form = () => {
                <label className="log-form__label" htmlFor="release">Year of Release</label>
                <input className="log-form__input" id="release" type="number" onInput={(e) => setBoardgame({ ...boardgame, releaseDate: e.target.value })} min="1900" />
                <label className="log-form__label" htmlFor="log-form__description">Description</label>
-               <textarea className="log-form__input" id="log-form__description" rows="6" cols="35" onInput={(e) => setBoardgame({ ...boardgame, description: e.target.value })} />
+               <textarea className="log-form__input" id="log-form__description" rows="6" cols="35" onInput={(e) => setBoardgame({ ...boardgame, description: e.target.value })} maxlength="120" />
                <button type="submit" className="log-form__input btn">Submit</button>
             </div>
          </form>
