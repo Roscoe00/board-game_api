@@ -20,7 +20,7 @@ const Boardgame = (props) => {
          <div className="boardgame-subsection">
             <p className="boardgame-subsection__release"><span className="boardgame__header">Released:</span> {releaseDate}</p>
             <Trash className="boardgame-subsection__icon"
-            // onClick={() => deleteBoardgame(id)}
+               onClick={() => deleteBoardgame(id)}
             />
          </div>
          <div className="boardgame__image" src="none" alt={"picutre of " + gameName} ></div>

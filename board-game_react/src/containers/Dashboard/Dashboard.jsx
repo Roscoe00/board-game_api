@@ -18,6 +18,7 @@ const Dashboard = () => {
          .catch(err => console.log(err))
    }
 
+
    const deleteBoardgame = (identity) => {
       fetch("http://localhost:8080/boardgame/" + identity, {
          method: "DELETE",
@@ -27,7 +28,7 @@ const Dashboard = () => {
    }
 
    useEffect(() => {
-      getBoardgames();
+      getBoardgames()
    }, []);
 
    return (
