@@ -11,6 +11,14 @@ const Dashboard = () => {
 
    const [boardgames, setBoardgames] = useState([]);
 
+   const [boardgame, setBoardgame] = useState({
+      gameName: "",
+      description: "",
+      maximumPlayers: null,
+      minimumPlayers: null,
+      releaseDate: null,
+   })
+
    const getBoardgames = () => {
       fetch("http://localhost:8080/boardgames")
          .then(res => res.json())
@@ -25,6 +33,20 @@ const Dashboard = () => {
          .catch(err => console.log(err))
    }
 
+   const handleSubmit = (e) => {
+      e.preventDefault()
+      fetch('http://localhost:8080/boardgame/add', {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(boardgame)
+      })
+         .then(() => { getBoardgames() })
+         .catch(err => console.log(err))
+      e.target.reset();
+   }
+
    useEffect(() => {
       getBoardgames()
    }, []);
@@ -36,7 +58,7 @@ const Dashboard = () => {
             <Routes>
                <Route path="/" element={<Home />} />
                <Route path="/boardgames" element={<BoardgameList boardgames={boardgames} deleteBoardgame={deleteBoardgame} />} />
-               <Route path="/new-Boardgame" element={<Form />} />
+               <Route path="/new-Boardgame" element={<Form handleSubmit={handleSubmit} setBoardgame={setBoardgame} boardgame={boardgame} />} />
             </Routes>
          </div>
       </Router>

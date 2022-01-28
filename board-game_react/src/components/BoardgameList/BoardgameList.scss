@@ -3,6 +3,7 @@
 .game-list {
    background-color: $defaultBackground;
    padding-bottom: 2rem;
+   min-height: 100vh;
 
    &__container {
       display: flex;

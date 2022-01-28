@@ -1,35 +1,16 @@
-import { useState } from "react";
 import "./Form.scss";
 
-const Form = () => {
+const Form = (props) => {
 
-   const [boardgame, setBoardgame] = useState({
-      gameName: "",
-      description: "",
-      maximumPlayers: null,
-      minimumPlayers: null,
-      releaseDate: null,
-   })
-
-   const handleSubmit = (e) => {
-      e.preventDefault()
-      fetch('http://localhost:8080/boardgame/add', {
-         method: 'POST',
-         headers: {
-            'Content-Type': 'application/json'
-         },
-         body: JSON.stringify(boardgame)
-      })
-         .then((response) => response.json())
-         .then((json => console.log(json)))
-         .catch(err => console.log(err))
-      e.target.reset();
-   }
+   const { handleSubmit, setBoardgame, boardgame } = props;
 
    return (
       <div className="log-form">
          <h2 className="log-form__title">Add a new Board game to the list</h2>
-         <form className="log-form__form" onSubmit={handleSubmit}>
+         <form className="log-form__form" onSubmit={
+            (e) => handleSubmit(e)
+            // () => console.log(boardgame)
+         }>
             <div className="log-form__section">
                <label className="log-form__label" htmlFor="gamename">Name of Game</label>
                <input className="log-form__input" id="gamename" type="text" onInput={(e) => setBoardgame({ ...boardgame, gameName: e.target.value })} required />
