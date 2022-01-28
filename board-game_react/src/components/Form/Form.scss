@@ -28,9 +28,11 @@
 
    &__label {
       color: $textBackground;
+      align-self: center;
    }
 
    &__input {
+      align-self: center;
       width: 32vw;
       padding: 0.5rem;
       border-radius: 0.5rem;

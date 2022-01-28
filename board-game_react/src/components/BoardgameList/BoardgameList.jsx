@@ -9,9 +9,8 @@ const BoardgameList = (props) => {
       <div className="game-list">
          <h2 className="game-list__heading">Explore our list of Board Games</h2>
          <div className="game-list__container">
-            {props.boardgames && props.boardgames.map(boardgame => (<div>
-               <Boardgame key={boardgame.id} boardgames={boardgame} deleteBoardgame={deleteBoardgame} />
-            </div>))}
+            {props.boardgames && props.boardgames.map(boardgame => (<Boardgame key={boardgame.id} boardgames={boardgame} deleteBoardgame={deleteBoardgame} />
+            ))}
          </div>
       </div>
    )

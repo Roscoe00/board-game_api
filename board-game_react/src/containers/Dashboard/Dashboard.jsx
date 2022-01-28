@@ -18,12 +18,10 @@ const Dashboard = () => {
          .catch(err => console.log(err))
    }
 
-
    const deleteBoardgame = (identity) => {
       fetch("http://localhost:8080/boardgame/" + identity, {
          method: "DELETE",
-      }).then((response) => response.json())
-         .then(json => setBoardgames(json))
+      }).then(() => { getBoardgames() })
          .catch(err => console.log(err))
    }
 

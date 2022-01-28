@@ -42,7 +42,7 @@ const Form = () => {
                <label className="log-form__label" htmlFor="release">Year of Release</label>
                <input className="log-form__input" id="release" type="number" onInput={(e) => setBoardgame({ ...boardgame, releaseDate: e.target.value })} min="1900" />
                <label className="log-form__label" htmlFor="log-form__description">Description</label>
-               <textarea className="log-form__input" id="log-form__description" rows="6" cols="35" onInput={(e) => setBoardgame({ ...boardgame, description: e.target.value })} maxlength="120" />
+               <textarea className="log-form__input" id="log-form__description" rows="6" cols="35" onInput={(e) => setBoardgame({ ...boardgame, description: e.target.value })} maxLength="120" />
                <button type="submit" className="log-form__input btn">Submit</button>
             </div>
          </form>
